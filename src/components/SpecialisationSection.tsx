@@ -37,7 +37,7 @@ const specialisations = [
     accentColor: '#6A9FD1',
     bgLight: '#EEF3FB',
     description:
-      'CBN is the second hardest material in the world — ideal for hard turning and interrupted cuts on hardened steels and cast iron without coolant.',
+      'CBN is the second hardest material in the world ideal for hard turning and interrupted cuts on hardened steels and cast iron without coolant.',
     features: [
       'Hard turning of hardened steels (45–70 HRC)',
       'Replaces grinding in many operations',
@@ -65,7 +65,7 @@ const specialisations = [
     accentColor: '#7BB3E0',
     bgLight: '#EEF3FB',
     description:
-      'Poly-Crystalline Diamond (PCD) tools offer the hardest cutting edge available — perfect for non-ferrous metals, composites and abrasive materials.',
+      'Poly-Crystalline Diamond (PCD) tools offer the hardest cutting edge available perfect for non-ferrous metals, composites and abrasive materials.',
     features: [
       'PCD tipped inserts and end mills',
       'Aluminium and non-ferrous machining',

@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
             <p className="text-[#7A9CC0] text-sm leading-relaxed max-w-xs">
               Authorised distributor of Sumitomo Electric cutting tools.
-              Specialists in Carbide, CBN and Diamond tooling — Bangalore and Mysore, India.
+              Specialists in Carbide, CBN and Diamond tooling Bangalore and Mysore, India.
             </p>
           </div>
 

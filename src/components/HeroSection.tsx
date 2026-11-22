@@ -111,7 +111,7 @@ export default function HeroSection() {
           className="text-[#5A6A85] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Authorised distributor of{' '}
-          <strong className="text-[#1B3A6B]">Sumitomo Electric</strong> cutting tools — specialists in
+          <strong className="text-[#1B3A6B]">Sumitomo Electric</strong> cutting tools, specialists in
           Carbide, CBN and Diamond tooling solutions in Bangalore and Mysore, India.
         </motion.p>
 

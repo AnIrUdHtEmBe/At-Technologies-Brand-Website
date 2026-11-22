@@ -17,7 +17,7 @@ const trustPoints = [
   {
     icon: Zap,
     title: 'Application Engineering',
-    description: 'We help you select the right tool for your specific machining challenges — from roughing to finishing operations.',
+    description: 'We help you select the right tool for your specific machining challenges, from roughing to finishing operations.',
   },
   {
     icon: Users,
