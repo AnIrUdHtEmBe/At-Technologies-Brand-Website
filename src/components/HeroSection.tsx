@@ -85,7 +85,7 @@ export default function HeroSection() {
             </div>
             <div className="text-left">
               <div className="text-[#1B3A6B] font-bold text-xl md:text-2xl tracking-tight">Sumitomo</div>
-              <div className="text-[#5A6A85] text-xs font-medium tracking-wide">Cutting Tools</div>
+              <div className="text-[#5A6A85] text-xs font-medium tracking-wide">Performance Cutting Tools</div>
             </div>
           </div>
         </motion.div>
