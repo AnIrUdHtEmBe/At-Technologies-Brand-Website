@@ -15,7 +15,8 @@ const jsonLd = {
       "@id": "https://attechnologiesind.com/#organization",
       "name": "AT Technologies",
       "url": "https://attechnologiesind.com",
-      "logo": "https://attechnologiesind.com/logo-at-technologies.png",
+      "logo": "https://attechnologiesind.com/images/at-logo.png",
+      "image": "https://attechnologiesind.com/images/at-logo.png",
       "description":
         "AT Technologies is an authorised distributor of Sumitomo Electric cutting tools in Bangalore and Mysore, Karnataka, India. We specialise in carbide, CBN, diamond, PCD cutting tools, drills, endmills and inserts for precision manufacturing.",
       "foundingLocation": {
@@ -53,44 +54,52 @@ const jsonLd = {
         "longitude": 77.5877,
       },
       "areaServed": [
-        "Bangalore", "Karnataka", "South India", "India",
+        "Bangalore", "Karnataka", "South India", "India"
+      ],
+      "knowsAbout": [
+        "Sumitomo Electric Cutting Tools",
+        "Tungsten Carbide Inserts",
+        "CBN Inserts",
+        "Diamond PCD Tools",
+        "Milling Endmills and Drills",
+        "Industrial CNC Machining Tools Bangalore"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Sumitomo Electric Cutting Tools",
+        "name": "Sumitomo Electric Cutting Tools Distribution",
         "itemListElement": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Sumitomo Carbide Cutting Tools",
-              "description": "Sumitomo carbide inserts, carbide end mills, carbide drills for turning and milling. PVD and CVD coated grades.",
-              "brand": { "@type": "Brand", "name": "Sumitomo Electric" },
-              "keywords": "carbide inserts, carbide drills, carbide endmills, Sumitomo carbide, carbide cutting tools Bangalore",
+            "@type": "Service",
+            "name": "Sumitomo Carbide Cutting Tools",
+            "description": "Authorised distribution of Sumitomo carbide inserts, carbide end mills, and drills for turning and milling.",
+            "provider": {
+              "@type": "Organization",
+              "name": "AT Technologies"
             },
+            "areaServed": "Bangalore, Karnataka, India"
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Sumitomo CBN Cutting Tools",
-              "description": "Sumitomo CBN (Cubic Boron Nitride) inserts for hard turning of hardened steels, cast iron and high-temperature alloys.",
-              "brand": { "@type": "Brand", "name": "Sumitomo Electric" },
-              "keywords": "CBN inserts, CBN tools, cubic boron nitride, hard turning tools, Sumitomo CBN Bangalore",
+            "@type": "Service",
+            "name": "Sumitomo CBN Cutting Tools",
+            "description": "Supply of Sumitomo CBN (Cubic Boron Nitride) tooling for hard turning of hardened steels, cast iron, and high-temp alloys.",
+            "provider": {
+              "@type": "Organization",
+              "name": "AT Technologies"
             },
+            "areaServed": "Bangalore, Karnataka, India"
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Sumitomo Diamond PCD Cutting Tools",
-              "description": "Sumitomo PCD (Poly-Crystalline Diamond) and diamond cutting tools for aluminium, composites, non-ferrous materials. Superior surface finish.",
-              "brand": { "@type": "Brand", "name": "Sumitomo Electric" },
-              "keywords": "PCD tools, diamond tools, PCD inserts, PCD drills, PCD endmills, diamond cutting tools Bangalore",
+            "@type": "Service",
+            "name": "Sumitomo Diamond PCD Cutting Tools",
+            "description": "Supply of Sumitomo PCD (Poly-Crystalline Diamond) tools for high-precision aluminium, composite, and non-ferrous machining.",
+            "provider": {
+              "@type": "Organization",
+              "name": "AT Technologies"
             },
-          },
-        ],
-      },
+            "areaServed": "Bangalore, Karnataka, India"
+          }
+        ]
+      }
     },
   ],
 };
