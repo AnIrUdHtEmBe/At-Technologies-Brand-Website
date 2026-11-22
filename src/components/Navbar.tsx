@@ -23,8 +23,20 @@ export default function Navbar() {
 
   const handleNav = (href: string) => {
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      const el = document.querySelector(href);
+      if (el) {
+        const navOffset = 70;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = el.getBoundingClientRect().top;
+        const offsetPosition = elementRect - bodyRect - navOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }, 150);
   };
 
   return (
@@ -69,21 +81,19 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.href}
-                onClick={() => handleNav(link.href)}
-                className="text-[#1A1A2E] hover:text-[#4A7FC1] text-sm font-medium transition-colors relative group"
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav(link.href);
+                }}
+                className="text-[#1A1A2E] hover:text-[#4A7FC1] text-sm font-medium transition-colors relative group cursor-pointer"
               >
                 {link.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#4A7FC1] group-hover:w-full transition-all duration-300" />
-              </button>
+              </a>
             ))}
-            {/* <button
-              onClick={() => handleNav('#contact')}
-              className="ml-2 px-5 py-2 bg-[#1B3A6B] text-white text-sm font-medium rounded-lg hover:bg-[#4A7FC1] transition-colors duration-200"
-            >
-              Get in Touch
-            </button> */}
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -106,20 +116,28 @@ export default function Navbar() {
       >
         <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNav(link.href)}
-              className="text-left text-[#1A1A2E] font-medium text-base hover:text-[#4A7FC1] transition-colors"
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav(link.href);
+              }}
+              className="text-left text-[#1A1A2E] font-medium text-base hover:text-[#4A7FC1] transition-colors py-1 cursor-pointer block"
             >
               {link.label}
-            </button>
+            </a>
           ))}
-          <button
-            onClick={() => handleNav('#contact')}
-            className="mt-2 px-5 py-3 bg-[#1B3A6B] text-white font-medium rounded-lg hover:bg-[#4A7FC1] transition-colors"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('#contact');
+            }}
+            className="mt-2 px-5 py-3 bg-[#1B3A6B] text-white font-medium rounded-lg hover:bg-[#4A7FC1] transition-colors text-center cursor-pointer block"
           >
             Get in Touch
-          </button>
+          </a>
         </div>
       </motion.div>
     </motion.header>
