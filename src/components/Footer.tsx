@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-white font-bold text-base leading-tight">AT Technologies</div>
-                <div className="text-[#93B8E3] text-[10px] tracking-widest uppercase">Authorised Distributor</div>
+                <div className="text-[#93B8E3] text-[10px] tracking-widest uppercase">Authorised Distributor Sumitomo</div>
               </div>
             </div>
             <p className="text-[#7A9CC0] text-sm leading-relaxed max-w-xs">
