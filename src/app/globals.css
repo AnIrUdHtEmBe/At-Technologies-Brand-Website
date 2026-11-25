@@ -14,11 +14,29 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem;
 }
 
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4rem;
+}
+
+#specialisation {
+  scroll-margin-top: calc(4rem - 10px);
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  #specialisation {
+    scroll-margin-top: calc(5rem - 10px);
+  }
 }
 
 body {
@@ -45,13 +63,18 @@ body {
 }
 
 .section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    min-height: calc(100vh - 5rem);
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }

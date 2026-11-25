@@ -23,7 +23,7 @@ const specialisations = [
     ],
     applications: ['Automotive', 'Aerospace', 'General Engineering'],
     icon: (
-      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
+      <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
         <polygon points="24,4 44,40 4,40" stroke="white" strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
         <polygon points="24,16 36,38 12,38" stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(255,255,255,0.15)"/>
       </svg>
@@ -47,7 +47,7 @@ const specialisations = [
     ],
     applications: ['Die & Mould', 'Hard Turning', 'Bearing Industry'],
     icon: (
-      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
+      <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
         <rect x="8" y="8" width="32" height="32" rx="4" stroke="white" strokeWidth="2.5" fill="none"/>
         <rect x="16" y="16" width="16" height="16" rx="2" stroke="white" strokeWidth="1.5" fill="rgba(255,255,255,0.2)"/>
         <line x1="24" y1="4" x2="24" y2="8" stroke="white" strokeWidth="2"/>
@@ -75,7 +75,7 @@ const specialisations = [
     ],
     applications: ['Aluminium Alloy', 'Copper Alloy', 'Reinforced Plastics'],
     icon: (
-      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
+      <svg viewBox="0 0 48 48" className="w-7 h-7" fill="none">
         <polygon points="24,4 44,20 36,44 12,44 4,20" stroke="white" strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
         <polygon points="24,12 38,22 32,40 16,40 10,22" stroke="white" strokeWidth="1" strokeLinejoin="round" fill="rgba(255,255,255,0.12)"/>
         <line x1="24" y1="4" x2="24" y2="12" stroke="white" strokeWidth="1.5"/>
@@ -89,25 +89,25 @@ const specialisations = [
 export default function SpecialisationSection() {
   return (
     <section id="specialisation" className="section-padding bg-[#F5F7FA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <FadeIn direction="up" className="text-center mb-16">
-          <p className="text-[#4A7FC1] text-xs font-bold tracking-[0.2em] uppercase mb-3">
+        <FadeIn direction="up" className="text-center mb-6 md:mb-8">
+          <p className="text-[#4A7FC1] text-xs font-bold tracking-[0.2em] uppercase mb-1.5">
             Our Specialisation
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A1A2E] leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-bold text-[#1A1A2E] leading-[1.15] mb-2.5">
             World-Class Tooling
             <span className="gradient-text block">in Three Categories</span>
           </h2>
-          <p className="text-[#5A6A85] text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#5A6A85] text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             From the hardness of carbide to the precision of diamond, we supply
             Sumitomo cutting tools across the complete spectrum of machining requirements.
           </p>
         </FadeIn>
 
         {/* Cards */}
-        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8" staggerDelay={0.12}>
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6" staggerDelay={0.1}>
           {specialisations.map((item) => (
             <motion.div
               key={item.id}
@@ -116,19 +116,19 @@ export default function SpecialisationSection() {
               className="group relative rounded-2xl overflow-hidden bg-white border border-[#DDE3ED] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               {/* Card top gradient */}
-              <div className={`h-44 bg-gradient-to-br ${item.gradient} p-6 flex flex-col justify-between`}>
+              <div className={`h-32 sm:h-36 bg-gradient-to-br ${item.gradient} p-4 sm:p-5 flex flex-col justify-between`}>
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
                     {item.icon}
                   </div>
                   <div className="text-right">
                     <div className="text-white/60 text-[10px] font-bold tracking-widest uppercase">Category</div>
-                    <div className="text-white/90 text-sm font-medium">{item.subtitle}</div>
+                    <div className="text-white/90 text-xs sm:text-sm font-medium">{item.subtitle}</div>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-black text-3xl tracking-tight mb-0.5">{item.name}</h3>
-                  <div className="flex gap-2 flex-wrap">
+                  <h3 className="text-white font-black text-2xl sm:text-[1.65rem] tracking-tight mb-1">{item.name}</h3>
+                  <div className="flex gap-1.5 flex-wrap">
                     {item.applications.map((app) => (
                       <span key={app} className="px-2 py-0.5 bg-white/15 text-white text-[10px] font-medium rounded-full tracking-wide">
                         {app}
@@ -139,13 +139,13 @@ export default function SpecialisationSection() {
               </div>
 
               {/* Card body */}
-              <div className="p-6 flex-1 flex flex-col">
-                <p className="text-[#5A6A85] text-sm leading-relaxed mb-5">{item.description}</p>
-                <ul className="space-y-2.5 flex-1">
+              <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                <p className="text-[#5A6A85] text-xs sm:text-sm leading-relaxed mb-3.5">{item.description}</p>
+                <ul className="space-y-1.5 flex-1">
                   {item.features.map((feat) => (
-                    <li key={feat} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={15} className="text-[#4A7FC1] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#1A1A2E] text-sm">{feat}</span>
+                    <li key={feat} className="flex items-start gap-2">
+                      <CheckCircle2 size={14} className="text-[#4A7FC1] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#1A1A2E] text-xs sm:text-sm">{feat}</span>
                     </li>
                   ))}
                 </ul>
@@ -161,9 +161,9 @@ export default function SpecialisationSection() {
         </StaggerContainer>
 
         {/* Bottom CTA row */}
-        <FadeIn direction="up" delay={0.3} className="mt-14">
+        <FadeIn direction="up" delay={0.2} className="mt-6 md:mt-7">
           <div className="flex flex-wrap items-center justify-center gap-4 text-center">
-            <p className="text-[#5A6A85] text-base">
+            <p className="text-[#5A6A85] text-sm sm:text-base">
               Looking for a specific tool or grade?
             </p>
             <a

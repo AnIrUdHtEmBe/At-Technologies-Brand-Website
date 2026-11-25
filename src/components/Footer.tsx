@@ -1,5 +1,7 @@
 'use client';
 import Image from 'next/image';
+import { scrollToSection } from '@/lib/scroll';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -49,7 +51,11 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-[#7A9CC0] hover:text-[#4A7FC1] text-sm transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
+                    className="text-[#7A9CC0] hover:text-[#4A7FC1] text-sm transition-colors cursor-pointer"
                   >
                     {link.label}
                   </a>

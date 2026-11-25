@@ -22,13 +22,13 @@ export function FadeIn({
   once = true,
 }: FadeInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-80px' });
+  const isInView = useInView(ref, { once, margin: '0px' });
 
   const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: 24, x: 0 },
+    down: { y: -24, x: 0 },
+    left: { x: 24, y: 0 },
+    right: { x: -24, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -37,7 +37,7 @@ export function FadeIn({
       ref={ref}
       initial={{ opacity: 0, ...directions[direction] }}
       animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.7, delay, ease: EASE }}
+      transition={{ duration: 0.5, delay, ease: EASE }}
       className={className}
     >
       {children}
@@ -57,7 +57,7 @@ export function StaggerContainer({
   staggerDelay = 0.1,
 }: StaggerContainerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: '0px' });
 
   return (
     <motion.div
@@ -76,10 +76,10 @@ export function StaggerContainer({
 }
 
 export const staggerChild = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: EASE },
+    transition: { duration: 0.45, ease: EASE },
   },
 } as const;

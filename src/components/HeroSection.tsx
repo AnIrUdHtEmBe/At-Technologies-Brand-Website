@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Award, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import { scrollToSection } from '@/lib/scroll';
 
 export default function HeroSection() {
   const handleScroll = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(href);
   };
 
   return (
@@ -29,14 +29,14 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 md:pt-24 md:pb-24 text-center">
 
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1B3A6B]/8 border border-[#1B3A6B]/15 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1B3A6B]/8 border border-[#1B3A6B]/15 mb-6"
         >
           <Award size={14} className="text-[#4A7FC1]" />
           <span className="text-[#1B3A6B] text-xs font-semibold tracking-widest uppercase">
@@ -49,7 +49,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="flex items-center justify-center gap-6 mb-10 flex-wrap"
+          className="flex items-center justify-center gap-6 mb-7 flex-wrap"
         >
           {/* AT Technologies Brand Logo */}
           <div className="flex items-center gap-3">
@@ -95,7 +95,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1A1A2E] leading-[1.1] tracking-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#1A1A2E] leading-[1.1] tracking-tight mb-5"
         >
           Precision Cutting Tools{' '}
           <span className="gradient-text block sm:inline">
@@ -108,7 +108,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-[#5A6A85] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-[#5A6A85] text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
         >
           Authorised distributor of{' '}
           <strong className="text-[#1B3A6B]">Sumitomo Electric</strong> cutting tools, specialists in
@@ -120,7 +120,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center justify-center gap-1.5 text-[#5A6A85] text-sm mb-10"
+          className="flex items-center justify-center gap-1.5 text-[#5A6A85] text-sm mb-8"
         >
           <MapPin size={14} className="text-[#4A7FC1]" />
           <span>Bangalore, Mysore, Karnataka, India</span>
@@ -141,30 +141,30 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => handleScroll('#specialisation')}
-            className="px-8 py-4 bg-white text-[#1B3A6B] font-semibold rounded-xl border border-[#DDE3ED] hover:border-[#4A7FC1] hover:text-[#4A7FC1] transition-all duration-200 text-base"
+            className="px-8 py-4 bg-white text-[#1B3A6B] font-semibold rounded-xl border border-[#DDE3ED] hover:border-[#4A7FC1] hover:text-[#4A7FC1] transition-all duration-200 text-base cursor-pointer"
           >
             Our Specialisations
           </button>
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.button
-          onClick={() => handleScroll('#about')}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#5A6A85] hover:text-[#4A7FC1] transition-colors group"
-          aria-label="Scroll to learn more"
-        >
-          <span className="text-xs tracking-widest uppercase font-medium">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <ArrowDown size={18} />
-          </motion.div>
-        </motion.button>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        onClick={() => handleScroll('#about')}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+        className="absolute bottom-5 md:bottom-7 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5 text-[#5A6A85] hover:text-[#4A7FC1] transition-colors group cursor-pointer"
+        aria-label="Scroll to learn more"
+      >
+        <span className="text-xs tracking-widest uppercase font-medium">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <ArrowDown size={18} />
+        </motion.div>
+      </motion.button>
 
       {/* Hidden SEO keywords - screen reader only */}
       <span className="sr-only">

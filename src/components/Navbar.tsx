@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { scrollToSection } from '@/lib/scroll';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -22,21 +23,12 @@ export default function Navbar() {
   }, [scrollY]);
 
   const handleNav = (href: string) => {
-    setIsOpen(false);
-    setTimeout(() => {
-      const el = document.querySelector(href);
-      if (el) {
-        const navOffset = 70;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = el.getBoundingClientRect().top;
-        const offsetPosition = elementRect - bodyRect - navOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-      }
-    }, 150);
+    if (isOpen) {
+      setIsOpen(false);
+      setTimeout(() => scrollToSection(href), 150);
+    } else {
+      scrollToSection(href);
+    }
   };
 
   return (
@@ -51,7 +43,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div data-navbar-bar className="flex items-center justify-between h-16 md:h-20">
           {/* Brand Logo & Text */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
